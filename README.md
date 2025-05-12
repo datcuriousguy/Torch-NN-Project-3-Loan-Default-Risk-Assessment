@@ -59,6 +59,25 @@ I have used `database_control.py` to:
 
 ## Understanding the Significance of the Data
 
+Some features of the data for training that will be used by the model to understand (and then decide) the probability of defaulting on the loan are:
+
+- Credit Score:
+    
+    ≥700 is considered good
+    
+- Debt-to-income Ratio:
+    
+    float value for which, lower the better
+    
+    - <0.35 is good
+    - >0.5 indicates debt consists of signfiicant portion of their expenses
+- Annual Income:
+    
+    float or int. Is it high enough to cover existing and potentially upcoming loans, as well as their existing expenses?
+    
+- Loan Amount:
+    
+    This is the amount the customer would like to borrow. A low risk applicant would have a low amount relative to their income, and a high risk one would have a high amount relative to their income.
 ---
 
 ## How The Neural Network is Trained
