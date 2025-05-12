@@ -78,6 +78,16 @@ Some features of the data for training that will be used by the model to underst
 - Loan Amount:
     
     This is the amount the customer would like to borrow. A low risk applicant would have a low amount relative to their income, and a high risk one would have a high amount relative to their income.
+    
+- Employment status
+    
+    This data is categorical, and can be transformed later in the model code. Essentially we have around 5 categories:
+    
+    - Stable Job
+    - Unstable Job
+    - Unemployed
+    - Recently Hired
+    - Student
 ---
 
 ## How The Neural Network is Trained
