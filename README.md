@@ -102,6 +102,15 @@ Some features of the data for training that will be used by the model to underst
     
     This is the period of time during which the loan is estimated to be paid off. A Shorter Loan Term correlates with a lower risk and a higher weight on the application.
 
+- Loan Purpose
+    
+    Here, we evaluate whether the loan is for:
+    
+    - Productive or Secure Purposes
+    - Non-Productive or Less-secure Purposes
+    
+    Intuitively, using the loan for a productive or secure purpose is more preferable as opposed to otherwise.
+
   
 ---
 
