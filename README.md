@@ -69,8 +69,10 @@ Some features of the data for training that will be used by the model to underst
     
     float value for which, lower the better
     
-    - <0.35 is good
-    - >0.5 indicates debt consists of signfiicant portion of their expenses
+    - Less than 0.35 is good
+    - Greater than 0.5 indicates debt consists of signfiicant portion of their expenses
+     Lower is better here.
+
 - Annual Income:
     
     float or int. Is it high enough to cover existing and potentially upcoming loans, as well as their existing expenses?
