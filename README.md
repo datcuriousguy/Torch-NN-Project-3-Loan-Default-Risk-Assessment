@@ -88,6 +88,10 @@ Some features of the data for training that will be used by the model to underst
     - Unemployed
     - Recently Hired
     - Student
+ 
+- Past Defaults
+    
+    Has the applicant defaulted (i.e., failed to pay back) any loans in the past? As a rule of thumb, the lower this number (0 or more, int) the better.
 ---
 
 ## How The Neural Network is Trained
