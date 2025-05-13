@@ -3,6 +3,7 @@
 Code to generate training data for training the model to identify low risk loan applicants
 """
 
+import pandas as pd
 import numpy as np
 import random
 
@@ -16,3 +17,19 @@ employment_weights = [0.45, 0.2, 0.1, 0.15, 0.1]  # trying to use realistic rati
 # Loan purpose categories
 loan_purposes = ["Productive and/or Secure", "Non-productive and/or Less Secure"]
 purpose_weights = [0.6, 0.4]
+
+"""
+our column headers
+columns = [
+    "credit_score",
+    "dti_ratio",
+    "annual_income",
+    "loan_amount",
+    "employment_status",
+    "past_defaults",
+    "credit_inquiries_12m",
+    "loan_term",
+    "loan_purpose",
+    "loan_default"
+]
+"""
