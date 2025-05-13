@@ -97,6 +97,11 @@ Some features of the data for training that will be used by the model to underst
     - 2-3 credit inquiries can be considered safe
     - more than 3 credit inquiries can signal potential financial strain
     - The lower this number, the less risky the applicant is.
+ 
+- Loan Term
+    
+    This is the period of time during which the loan is estimated to be paid off. A Shorter Loan Term correlates with a lower risk and a higher weight on the application.
+
   
 ---
 
