@@ -1,0 +1,18 @@
+
+"""
+Code to generate training data for training the model to identify low risk loan applicants
+"""
+
+import numpy as np
+import random
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+# Employment status categories
+employment_statuses = ["Stable Job", "Unstable Job", "Unemployed", "Recently Hired", "Student"]
+employment_weights = [0.45, 0.2, 0.1, 0.15, 0.1]  # trying to use realistic ratios. Large proportion of recent hires and stable jobs
+
+# Loan purpose categories
+loan_purposes = ["Productive and/or Secure", "Non-productive and/or Less Secure"]
+purpose_weights = [0.6, 0.4]
