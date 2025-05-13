@@ -44,7 +44,7 @@ Files:
 - Database information (Local MySQL Database):
     - Username: `daniel`
     - Password: `daniel`
-    - Database name: `nn_project_2_database`
+    - Database name: `nn_project_3_database`
 
 ---
 
