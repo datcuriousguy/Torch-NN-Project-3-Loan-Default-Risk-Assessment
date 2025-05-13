@@ -92,6 +92,12 @@ Some features of the data for training that will be used by the model to underst
 - Past Defaults
     
     Has the applicant defaulted (i.e., failed to pay back) any loans in the past? As a rule of thumb, the lower this number (0 or more, int) the better.
+    
+- Credit Inquiries (in the last 12 mos)
+    - 2-3 credit inquiries can be considered safe
+    - more than 3 credit inquiries can signal potential financial strain
+    - The lower this number, the less risky the applicant is.
+  
 ---
 
 ## How The Neural Network is Trained
