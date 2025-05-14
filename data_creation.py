@@ -33,3 +33,13 @@ columns = [
     "loan_default"
 ]
 """
+
+# Generator function for one row
+def generate_row():
+
+    """
+    to try and mimic real world credit scores, we center the avg credit score around 680.
+    (gaussian curve centered at 650)
+
+    
+    """
