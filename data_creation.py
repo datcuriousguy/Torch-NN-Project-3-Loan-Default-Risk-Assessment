@@ -40,6 +40,15 @@ def generate_row():
     """
     to try and mimic real world credit scores, we center the avg credit score around 680.
     (gaussian curve centered at 650)
+    clip ensures that the value stats similar to real credit scores. That is, ranging from 300 to 850
+
+    dti or debt to income ratio, is between clipped between 0.1 and 0.9 to avoid nonsensical values (like negative or greater than 100%)
+
+    The average salary is clipped to stay realistic: minimum $10,000, maximum $200,000.
 
     
     """
+
+    credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
+    dti_ratio = round(np.clip(np.random.normal(0.35, 0.1), 0.1, 0.9), 2)
+    annual_income = int(np.clip(np.random.normal(60000, 20000), 10000, 200000))
