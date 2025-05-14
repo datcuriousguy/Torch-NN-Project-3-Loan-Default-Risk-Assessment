@@ -46,9 +46,10 @@ def generate_row():
 
     The average salary is clipped to stay realistic: minimum $10,000, maximum $200,000.
 
-    
+    for the loan amount, annual_income * dti_ratio estimates how much the person can afford to borrow.
     """
 
     credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
     dti_ratio = round(np.clip(np.random.normal(0.35, 0.1), 0.1, 0.9), 2)
     annual_income = int(np.clip(np.random.normal(60000, 20000), 10000, 200000))
+    loan_amount = int(np.clip(np.random.normal(annual_income * dti_ratio, 5000), 1000, 75000))
