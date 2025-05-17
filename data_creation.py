@@ -51,7 +51,10 @@ def generate_row():
     for the employment status, we have a list ["Stable Job", "Unstable Job", "Unemployed", "Recently Hired", "Student"].
     out of these items, we pick any one at random but with some bias in the weights, namely a bias towards
     student and stable job, to try to match the constantly changing reality of the job market.
-    
+
+    past defaults indicates whether and if so, how many times the borrower has defaulted (or failed to pay back a loan) in
+    the past.It works such that if their credit score is good then they are less likely to have defaulted.
+    i.e., it is dependent on their credit score (input feature).
     """
 
     credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
@@ -59,3 +62,4 @@ def generate_row():
     annual_income = int(np.clip(np.random.normal(60000, 20000), 10000, 200000))
     loan_amount = int(np.clip(np.random.normal(annual_income * dti_ratio, 5000), 1000, 75000))
     employment_status = random.choices(employment_statuses, weights=employment_weights, k=1)[0]
+    past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
