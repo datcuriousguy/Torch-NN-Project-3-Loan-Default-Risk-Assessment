@@ -69,6 +69,10 @@ def generate_row():
     8. LOAN TERM
     A set number of months between 12 and 72 mos (or 1 to 6 years).
     The probabilities [0.1, 0.2, 0.3, 0.2, 0.15, 0.05] are such that longer loans are rarer.
+
+    9. LOAN PURPOSE
+    60% Chance of productive / secure loan use (say, a car or basic two-wheeler)
+    40% Chance of non-productive / insecure loan use (say, a TV)
     """
 
     credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
@@ -79,3 +83,4 @@ def generate_row():
     past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
     credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
     loan_term = int(np.random.choice([12, 24, 36, 48, 60, 72], p=[0.1, 0.2, 0.3, 0.2, 0.15, 0.05]))
+    loan_purpose = random.choices(loan_purposes, weights=purpose_weights, k=1)[0]
