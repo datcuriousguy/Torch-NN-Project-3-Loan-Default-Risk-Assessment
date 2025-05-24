@@ -38,23 +38,33 @@ columns = [
 def generate_row():
 
     """
+    1. CREDIT SCORE:
     to try and mimic real world credit scores, we center the avg credit score around 680.
     (gaussian curve centered at 650)
     clip ensures that the value stats similar to real credit scores. That is, ranging from 300 to 850
 
+    2. DEBT-TO-INCOME:
     dti or debt to income ratio, is between clipped between 0.1 and 0.9 to avoid nonsensical values (like negative or greater than 100%)
 
+    3. AVERAGE SALARY
     The average salary is clipped to stay realistic: minimum $10,000, maximum $200,000.
 
+    4. LOAN AMOUNT (WHAT IS BEING BORROWED)
     for the loan amount, annual_income * dti_ratio estimates how much the person can afford to borrow.
 
+    5. EMPLOYMENT STATUS
     for the employment status, we have a list ["Stable Job", "Unstable Job", "Unemployed", "Recently Hired", "Student"].
     out of these items, we pick any one at random but with some bias in the weights, namely a bias towards
     student and stable job, to try to match the constantly changing reality of the job market.
 
-    past defaults indicates whether and if so, how many times the borrower has defaulted (or failed to pay back a loan) in
+    6. NUMBER OF PAST DEFAULTS
+    Past-default number indicates whether and if so, how many times the borrower has defaulted (or failed to pay back a loan) in
     the past.It works such that if their credit score is good then they are less likely to have defaulted.
     i.e., it is dependent on their credit score (input feature).
+
+    7. NUMBER OF CREDIT INQUIRIES
+    This is the number of times the applicant has applied for credit in the last year.
+    - It can range between 0 and 10 and is simulated using a poisson distribution.
     """
 
     credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
@@ -63,3 +73,4 @@ def generate_row():
     loan_amount = int(np.clip(np.random.normal(annual_income * dti_ratio, 5000), 1000, 75000))
     employment_status = random.choices(employment_statuses, weights=employment_weights, k=1)[0]
     past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
+    credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
