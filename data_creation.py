@@ -65,6 +65,10 @@ def generate_row():
     7. NUMBER OF CREDIT INQUIRIES
     This is the number of times the applicant has applied for credit in the last year.
     - It can range between 0 and 10 and is simulated using a poisson distribution.
+
+    8. LOAN TERM
+    A set number of months between 12 and 72 mos (or 1 to 6 years).
+    The probabilities [0.1, 0.2, 0.3, 0.2, 0.15, 0.05] are such that longer loans are rarer.
     """
 
     credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
@@ -74,3 +78,4 @@ def generate_row():
     employment_status = random.choices(employment_statuses, weights=employment_weights, k=1)[0]
     past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
     credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
+    loan_term = int(np.random.choice([12, 24, 36, 48, 60, 72], p=[0.1, 0.2, 0.3, 0.2, 0.15, 0.05]))
