@@ -84,3 +84,27 @@ def generate_row():
     credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
     loan_term = int(np.random.choice([12, 24, 36, 48, 60, 72], p=[0.1, 0.2, 0.3, 0.2, 0.15, 0.05]))
     loan_purpose = random.choices(loan_purposes, weights=purpose_weights, k=1)[0]
+
+    """
+    The risk score calculation essentially works such that, the
+     risk score increases proportionately with the factors:
+     
+    - dti_ratio (higher dti ratios attract higher weight as * 1.5)
+    - past_defaults (If the person has defaulted before, this adds 2 to their risk)
+    - credit_inquiries (Many inquiries = desperate borrower = potential risk)
+    
+    if loan_purpose == "Non-productive and/or Less Secure", we increase risk score by 1.
+    And if the loan term is longer than 48 years, we multiply that number by 0.5 and add
+    it to the risk score.
+    """
+
+    # Risk score calculation
+    risk_score = (
+        (700 - credit_score) * 0.01 +
+        dti_ratio * 1.5 +
+        past_defaults * 2 +
+        credit_inquiries * 0.2 +
+        (employment_status != "Stable Job") * 1 +
+        (loan_purpose == "Non-productive and/or Less Secure") * 1 +
+        (loan_term > 48) * 0.5
+    )
