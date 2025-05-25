@@ -139,12 +139,47 @@ def generate_row():
         round(risk_score, 2)
     )
 
-# col headers
-print("credit_score |  dti_ratio |  annual_income |  loan_amount |  employment_status |  past_defaults |  credit_inquiries |  loan_term | loan_purpose | loan_default")
+# SQL table creation
+create_table_query = """
+CREATE TABLE IF NOT EXISTS loan_training_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    credit_score INT,
+    dti_ratio FLOAT,
+    annual_income INT,
+    loan_amount INT,
+    employment_status VARCHAR(50),
+    past_defaults TINYINT,
+    credit_inquiries INT,
+    loan_term INT,
+    loan_purpose VARCHAR(50),
+    risk_score FLOAT
+);
+"""
 
-# Generate and print data
-data = []
-for i in range(70000):  # Change this to 70000 if needed, but printing 70K rows is very slow!
-    row = generate_row()
-    data.append(row)
-    print("|".join(str(item).ljust(24) for item in row))
+# Column headers
+print("credit_score | dti_ratio | annual_income | loan_amount | employment_status     | past_defaults | credit_inquiries | loan_term | loan_purpose                    | risk_score")
+print("-" * 130)
+
+# Insert generated rows into MySQL
+try:
+    with connection.cursor() as cursor:
+        cursor.execute(create_table_query)
+        for _ in range(7000):
+            row = generate_row()
+
+            # Print row in tabular format
+            print(f"{row[0]:<13} | {row[1]:<9} | {row[2]:<13} | {row[3]:<11} | {row[4]:<21} | {row[5]:<13} | {row[6]:<17} | {row[7]:<9} | {row[8]:<30} | {row[9]:<10}")
+
+            insert_query = """
+            INSERT INTO loan_training_data (
+                credit_score, dti_ratio, annual_income, loan_amount,
+                employment_status, past_defaults, credit_inquiries,
+                loan_term, loan_purpose, risk_score
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """
+            cursor.execute(insert_query, row)
+
+        connection.commit()  # ensure the changes are made then permanently stored.
+
+finally:
+    connection.close()
