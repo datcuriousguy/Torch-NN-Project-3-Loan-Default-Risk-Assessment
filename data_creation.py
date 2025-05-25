@@ -112,3 +112,16 @@ def generate_row():
     # We decide the applicant is more likely to default on the loan if the risk score is greater than 4,
     # else loan default = 0 and they are safe. Remember this is just the training data.
     loan_default = 1 if risk_score > 4 else 0
+
+    return [
+        credit_score,
+        dti_ratio,
+        annual_income,
+        loan_amount,
+        employment_status,
+        past_defaults,
+        credit_inquiries,
+        loan_term,
+        loan_purpose,
+        loan_default
+    ]
