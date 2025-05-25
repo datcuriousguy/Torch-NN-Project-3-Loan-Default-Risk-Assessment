@@ -108,3 +108,7 @@ def generate_row():
         (loan_purpose == "Non-productive and/or Less Secure") * 1 +
         (loan_term > 48) * 0.5
     )
+
+    # We decide the applicant is more likely to default on the loan if the risk score is greater than 4,
+    # else loan default = 0 and they are safe. Remember this is just the training data.
+    loan_default = 1 if risk_score > 4 else 0
