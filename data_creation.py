@@ -125,3 +125,13 @@ def generate_row():
         loan_purpose,
         loan_default
     ]
+
+# col headers
+print("credit_score |  dti_ratio |  annual_income |  loan_amount |  employment_status |  past_defaults |  credit_inquiries |  loan_term | loan_purpose | loan_default")
+
+# Generate and print data
+data = []
+for i in range(70000):  # Change this to 70000 if needed, but printing 70K rows is very slow!
+    row = generate_row()
+    data.append(row)
+    print("|".join(str(item).ljust(24) for item in row))
