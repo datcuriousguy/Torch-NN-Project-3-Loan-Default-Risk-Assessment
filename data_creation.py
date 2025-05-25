@@ -6,8 +6,21 @@ Code to generate training data for training the model to identify low risk loan 
 import pandas as pd
 import numpy as np
 import random
+import pymysql
 
-# Set seed for reproducibility
+
+# Database connection setup
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='password',
+    database='nn_project_3_database',
+    charset='utf8mb4',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+# Set seed 42 (arbitrary) for reproducibility.
+# Now data will be the same yet still random in future runs.
 np.random.seed(42)
 
 # Employment status categories
@@ -125,3 +138,13 @@ def generate_row():
         loan_purpose,
         round(risk_score, 2)
     )
+
+# col headers
+print("credit_score |  dti_ratio |  annual_income |  loan_amount |  employment_status |  past_defaults |  credit_inquiries |  loan_term | loan_purpose | loan_default")
+
+# Generate and print data
+data = []
+for i in range(70000):  # Change this to 70000 if needed, but printing 70K rows is very slow!
+    row = generate_row()
+    data.append(row)
+    print("|".join(str(item).ljust(24) for item in row))
