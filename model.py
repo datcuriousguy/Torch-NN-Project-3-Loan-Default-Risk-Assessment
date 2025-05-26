@@ -59,3 +59,23 @@ X = scaler.fit_transform(X)
 # datatype resulting from this: numpy arrays
 # the random variable is arbitrary. I like the number 77
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=77)
+
+"""
+Now we convert our training X, training Y, testing X and testing Y into
+torch's required torch-tensor datatype so that we can use it to train a
+torch model. We haven't defined the model yet but will soon.
+
+Note: torch.tensor() is the built in torch func we are using
+We use .view(-1, 1) for y train and y test because, since x is already
+a 2D array as a result of StandardScaler, we now need to convert the y train and
+y test into 2D from its 1D form. 
+
+Consider a function like nn.MSELoss(). it cannot simply run on y_train_tensor
+in the form [num_samples]. it needs to be of the form [num_samples, 1] (or 2D).
+
+Hence we use .view(-1, 1) where it is reshaped accordingly.
+"""
+X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
+y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32).view(-1, 1)
+X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
+y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32).view(-1, 1)
