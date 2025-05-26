@@ -39,3 +39,11 @@ for col in categorical_cols:
     le = LabelEncoder()
     df[col] = le.fit_transform(df[col])
     label_encoders[col] = le  # Save encoder for possible use later
+
+"""
+Here we split the input features vs thde target variable.
+X is all columns minus the risk_score (as that is the target).
+y is the risk_score column alone.
+"""
+X = df.drop(columns=['risk_score'])
+y = df['risk_score']
