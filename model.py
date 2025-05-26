@@ -47,3 +47,6 @@ y is the risk_score column alone.
 """
 X = df.drop(columns=['risk_score'])
 y = df['risk_score']
+
+# defining the std scaler variable
+scaler = StandardScaler()
