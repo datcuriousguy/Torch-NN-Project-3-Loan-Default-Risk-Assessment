@@ -53,3 +53,9 @@ scaler = StandardScaler()
 # Scaling features to have a mean of 0 and std_dev of 1 (by default)
 # prevents outlier-values from dominating and keeps data normalized.
 X = scaler.fit_transform(X)
+
+# splitting data into an 80-20 train-test ratio for evaluation
+#note: 0.2 refers to the 20% and the remaining 80% is for training.
+# datatype resulting from this: numpy arrays
+# the random variable is arbitrary. I like the number 77
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=77)
