@@ -50,3 +50,6 @@ y = df['risk_score']
 
 # defining the std scaler variable
 scaler = StandardScaler()
+# Scaling features to have a mean of 0 and std_dev of 1 (by default)
+# prevents outlier-values from dominating and keeps data normalized.
+X = scaler.fit_transform(X)
