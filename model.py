@@ -79,3 +79,22 @@ X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
 y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32).view(-1, 1)
 X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
 y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32).view(-1, 1)
+
+
+# Define the neural network
+"""
+Mapping features to loan default is a task with a level of variance that
+is not as high as say, image recognition but definitely not linear either.
+This is something to think about when choosing the number of neurons per hidden layer.
+
+In general, a good starting point appears to be with 64 neurons for the
+input layer, cutting down by 2 for further abstraction of features as we
+move through the network (to next hidden layer).
+
+Too few layers would hinder 'learning' of anything outside of linear,
+and 
+Too many layers would lead to a higher risk of overfitting.
+
+A typical practice seems to be 2 hidden layers, so thatsa what we'll go for.
+
+"""
