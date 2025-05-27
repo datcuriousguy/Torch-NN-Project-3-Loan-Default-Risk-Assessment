@@ -109,4 +109,16 @@ abstraction. From my research, ReLU seems better for smaller neural networks lik
 this one, unline Tanh or Sigmoid, which might run a higher risk of the
 vanishing gradient problem.
 
+Hence, we go from input -> 64, 64 -> h1 (32), h1 (32) -> output (1)
 """
+
+class RiskModel(nn.Module):
+    def __init__(self, input_dim):
+        super(RiskModel, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(input_dim, 64),
+            nn.ReLU(),
+            nn.Linear(64, 32),
+            nn.ReLU(),
+            nn.Linear(32, 1)
+        )
