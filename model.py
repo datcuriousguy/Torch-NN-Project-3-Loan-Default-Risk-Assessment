@@ -122,3 +122,9 @@ class RiskModel(nn.Module):
             nn.ReLU(),
             nn.Linear(32, 1)
         )
+
+## we add a feec forward function that is self defined and passes an input
+    ## parameter x through the network, returning its output from inputting x.
+
+    def forward(self, x):
+        return self.network(x)
