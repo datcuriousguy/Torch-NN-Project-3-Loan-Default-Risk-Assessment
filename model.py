@@ -97,4 +97,16 @@ Too many layers would lead to a higher risk of overfitting.
 
 A typical practice seems to be 2 hidden layers, so thatsa what we'll go for.
 
+As for the Linear Layers, linear layers use the typical line formula:
+
+y = xW + bias. This is not very different from the formula of a straight line.
+
+This is helpful because the weights (or bias) controls how much each input
+feature influences the output, quite literally.
+
+Without ReLU, the network would just learn linear functions and not have enough 
+abstraction. From my research, ReLU seems better for smaller neural networks like
+this one, unline Tanh or Sigmoid, which might run a higher risk of the
+vanishing gradient problem.
+
 """
