@@ -151,3 +151,18 @@ It seems like a good balance between time to run, and error.
 """
 # Train the model
 epochs = 200
+
+"""
+For each epoch, we:
+"""
+
+for epoch in range(epochs):
+    # sets the model to training mode, which is apparently a good practice regardless of anything:
+    model.train()
+    # zeroing out previously created gradients before the next backpropagation through the layers
+    # preventing gradient accumulation:
+    optimizer.zero_grad()
+    # runs data through the model to get predicted risk scores. these will be compared to the true scores to see error:
+    output = model(X_train_tensor)
+    # comparing true values to the model's outputs:
+    loss = criterion(output, y_train_tensor)
