@@ -123,8 +123,14 @@ class RiskModel(nn.Module):
             nn.Linear(32, 1)
         )
 
-## we add a feec forward function that is self defined and passes an input
+## we add a feed forward function that is self defined and passes an input
     ## parameter x through the network, returning its output from inputting x.
 
     def forward(self, x):
         return self.network(x)
+
+# input_dim is 9 since there are 9 training features.
+# the [1] index refers to the columns instead of the rows. i.e.,
+# using [0] would call all the rows instead.
+
+input_dim = X_train_tensor.shape[1]
