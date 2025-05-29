@@ -181,3 +181,13 @@ for epoch in range(epochs):
         # we compare the model's learned risk with the true y values (y_test_tensor)
         test_output = model(X_test_tensor)
         test_loss = criterion(test_output, y_test_tensor)
+
+    print(f"Epoch {epoch + 1}/{epochs} | Train Loss: {loss.item():.4f} | Test Loss: {test_loss.item():.4f}")
+
+# Optionally: Save model
+torch.save(model.state_dict(), "risk_model.pth")
+
+
+"""
+TEST ON NEW DATA
+"""
