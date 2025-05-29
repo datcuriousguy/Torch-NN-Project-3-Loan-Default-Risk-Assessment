@@ -134,3 +134,7 @@ class RiskModel(nn.Module):
 # using [0] would call all the rows instead.
 
 input_dim = X_train_tensor.shape[1]
+
+# instantiating the model in the name 'model', running out input_dim (9 features) through it
+
+model = RiskModel(input_dim)
