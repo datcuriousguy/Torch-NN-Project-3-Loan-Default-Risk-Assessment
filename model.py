@@ -172,3 +172,6 @@ for epoch in range(epochs):
     # instructing the model to update weights using the gradients to reduce loss - the point of backpropagation
     # essentially the model's way of 'implementing feedback':
     optimizer.step()
+
+    # Optional: set the model to eval mode - "stop learning and start testing your 'learning'"
+    model.eval()
