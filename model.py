@@ -166,3 +166,7 @@ for epoch in range(epochs):
     output = model(X_train_tensor)
     # comparing true values to the model's outputs:
     loss = criterion(output, y_train_tensor)
+    # inbuilt backward pass function that is applied to the loss
+    # essentially turning around and asking "where did we go wrong?" for each epoch:
+    loss.backward()
+    
