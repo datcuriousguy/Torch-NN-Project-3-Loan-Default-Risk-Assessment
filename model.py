@@ -169,4 +169,6 @@ for epoch in range(epochs):
     # inbuilt backward pass function that is applied to the loss
     # essentially turning around and asking "where did we go wrong?" for each epoch:
     loss.backward()
-    
+    # instructing the model to update weights using the gradients to reduce loss - the point of backpropagation
+    # essentially the model's way of 'implementing feedback':
+    optimizer.step()
