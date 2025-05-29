@@ -175,3 +175,9 @@ for epoch in range(epochs):
 
     # Optional: set the model to eval mode - "stop learning and start testing your 'learning'"
     model.eval()
+    # I think of torch.no_grad() ass us telling the model to "stop learning - just observe".
+    with torch.no_grad():
+        # while the gradients are not being changed, (learning mode is off),
+        # we compare the model's learned risk with the true y values (y_test_tensor)
+        test_output = model(X_test_tensor)
+        test_loss = criterion(test_output, y_test_tensor)
