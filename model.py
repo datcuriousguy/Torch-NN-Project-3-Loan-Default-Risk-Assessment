@@ -138,3 +138,16 @@ input_dim = X_train_tensor.shape[1]
 # instantiating the model in the name 'model', running out input_dim (9 features) through it
 
 model = RiskModel(input_dim)
+
+# Define loss and optimizer
+criterion = nn.MSELoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+"""
+setting the epochs as 200 reduces training error from  8.0753 to 0.1921
+which is obviously a reasonable amount or error (well below 1.)
+
+It seems like a good balance between time to run, and error.
+"""
+# Train the model
+epochs = 200
