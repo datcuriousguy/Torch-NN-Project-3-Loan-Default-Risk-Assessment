@@ -434,3 +434,5 @@ input_dim = test_data_scaled.shape[1]
 model = RiskModel(input_dim)
 # Since we saved the model as torch.save(model.state_dict(), "risk_model.pth"),
 model.load_state_dict(torch.load("risk_model.pth"))
+#set the model into evaluation ("use what you've learnt") mode.
+model.eval()
