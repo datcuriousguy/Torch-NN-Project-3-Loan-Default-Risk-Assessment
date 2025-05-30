@@ -430,3 +430,7 @@ test_data_scaled = scaler.fit_transform(test_data_df)
 
 # Loading Model & Weights
 input_dim = test_data_scaled.shape[1]
+# our earlier created RiskModel()
+model = RiskModel(input_dim)
+# Since we saved the model as torch.save(model.state_dict(), "risk_model.pth"),
+model.load_state_dict(torch.load("risk_model.pth"))
