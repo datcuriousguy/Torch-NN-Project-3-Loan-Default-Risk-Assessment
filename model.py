@@ -420,3 +420,7 @@ test_data = [
         "loan_purpose": "Secure"
     }
 ]
+
+# converting it into a dataframe as models run on dataframes:
+
+test_data_df = pd.DataFrame(test_data)
