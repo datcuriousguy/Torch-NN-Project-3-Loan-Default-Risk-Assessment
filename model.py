@@ -424,3 +424,9 @@ test_data = [
 # converting it into a dataframe as models run on dataframes:
 
 test_data_df = pd.DataFrame(test_data)
+
+scaler = StandardScaler()
+test_data_scaled = scaler.fit_transform(test_data_df)
+
+# Loading Model & Weights
+input_dim = test_data_scaled.shape[1]
