@@ -40,6 +40,14 @@ Files:
 - `requirements.md`
     
     Lists the libraries required to run the neural network and get a desired output.
+
+  - `loan_application_test_data.py`
+    
+    Sample loan applicant data to be run through the model.
+
+- `model_training_output.txt`
+    
+    The predictions of loan default probabilities the model outputs on inputting sample data from loan_application_test_data.py
     
 - Database information (Local MySQL Database):
     - Username: `daniel`
