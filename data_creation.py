@@ -95,7 +95,7 @@ def generate_row():
     past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
     credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
     loan_term = int(np.random.choice([12, 24, 36, 48, 60, 72], p=[0.1, 0.2, 0.3, 0.2, 0.15, 0.05]))
-    loan_purpose = random.choices(loan_purposes, weights=purpose_weights, k=1)[0]
+    loan_purpose = random.choice([1,0])
 
     """
     The risk score calculation essentially works such that, the
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS loan_training_data (
     dti_ratio FLOAT,
     annual_income INT,
     loan_amount INT,
-    employment_duration VARCHAR(50),
+    employment_duration INT,
     past_defaults TINYINT,
     credit_inquiries INT,
     loan_term INT,
