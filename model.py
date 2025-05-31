@@ -453,3 +453,10 @@ with torch.no_grad():
 # and binary predictions (0 or 1)
 predicted_probs = torch.sigmoid(predictions).numpy()   # to convert the output of the model to a value between 0 and 1 using sigmoid activation function
 predicted_classes = (predicted_probs > 0.5).astype(int)
+
+"""
+Note: predicted class is simply 0 for rejected and 1 for accepted.
+probability of not-defaulting is given as well be formatting it to 2f.
+"""
+for i, (prob, pred) in enumerate(zip(predicted_probs, predicted_classes)):
+    print(f"Applicant {i+1}: Probability of Loan Approval = {prob[0]:.2f} | Predicted Class = {pred[0]}")
