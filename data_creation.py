@@ -30,7 +30,7 @@ employment_durations = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 employment_weights = [0.45, 0.2, 0.1, 0.15, 0.1]  # trying to use realistic ratios. Large proportion of recent hires and stable jobs
 
 # Loan purpose categories
-loan_purposes = ["Productive and/or Secure", "Non-productive and/or Less Secure"]
+# loan_purposes = ["Productive and/or Secure", "Non-productive and/or Less Secure"]
 purpose_weights = [0.6, 0.4]
 
 """
