@@ -1,0 +1,224 @@
+  df = pd.read_sql(query, connection)
+Epoch 1/200 | Train Loss: 6.5353 | Test Loss: 6.1805
+Epoch 2/200 | Train Loss: 6.4381 | Test Loss: 6.0866
+Epoch 3/200 | Train Loss: 6.3430 | Test Loss: 5.9946
+Epoch 4/200 | Train Loss: 6.2497 | Test Loss: 5.9036
+Epoch 5/200 | Train Loss: 6.1578 | Test Loss: 5.8135
+Epoch 6/200 | Train Loss: 6.0668 | Test Loss: 5.7237
+Epoch 7/200 | Train Loss: 5.9761 | Test Loss: 5.6340
+Epoch 8/200 | Train Loss: 5.8854 | Test Loss: 5.5439
+Epoch 9/200 | Train Loss: 5.7944 | Test Loss: 5.4533
+Epoch 10/200 | Train Loss: 5.7027 | Test Loss: 5.3620
+Epoch 11/200 | Train Loss: 5.6100 | Test Loss: 5.2695
+Epoch 12/200 | Train Loss: 5.5161 | Test Loss: 5.1756
+Epoch 13/200 | Train Loss: 5.4207 | Test Loss: 5.0800
+Epoch 14/200 | Train Loss: 5.3237 | Test Loss: 4.9827
+Epoch 15/200 | Train Loss: 5.2251 | Test Loss: 4.8837
+Epoch 16/200 | Train Loss: 5.1247 | Test Loss: 4.7829
+Epoch 17/200 | Train Loss: 5.0225 | Test Loss: 4.6805
+Epoch 18/200 | Train Loss: 4.9185 | Test Loss: 4.5764
+Epoch 19/200 | Train Loss: 4.8127 | Test Loss: 4.4707
+Epoch 20/200 | Train Loss: 4.7050 | Test Loss: 4.3634
+Epoch 21/200 | Train Loss: 4.5955 | Test Loss: 4.2546
+Epoch 22/200 | Train Loss: 4.4843 | Test Loss: 4.1443
+Epoch 23/200 | Train Loss: 4.3715 | Test Loss: 4.0326
+Epoch 24/200 | Train Loss: 4.2572 | Test Loss: 3.9195
+Epoch 25/200 | Train Loss: 4.1415 | Test Loss: 3.8051
+Epoch 26/200 | Train Loss: 4.0244 | Test Loss: 3.6897
+Epoch 27/200 | Train Loss: 3.9061 | Test Loss: 3.5733
+Epoch 28/200 | Train Loss: 3.7867 | Test Loss: 3.4561
+Epoch 29/200 | Train Loss: 3.6665 | Test Loss: 3.3384
+Epoch 30/200 | Train Loss: 3.5456 | Test Loss: 3.2204
+Epoch 31/200 | Train Loss: 3.4243 | Test Loss: 3.1024
+Epoch 32/200 | Train Loss: 3.3028 | Test Loss: 2.9846
+Epoch 33/200 | Train Loss: 3.1812 | Test Loss: 2.8673
+Epoch 34/200 | Train Loss: 3.0599 | Test Loss: 2.7506
+Epoch 35/200 | Train Loss: 2.9391 | Test Loss: 2.6348
+Epoch 36/200 | Train Loss: 2.8192 | Test Loss: 2.5203
+Epoch 37/200 | Train Loss: 2.7003 | Test Loss: 2.4073
+Epoch 38/200 | Train Loss: 2.5828 | Test Loss: 2.2961
+Epoch 39/200 | Train Loss: 2.4670 | Test Loss: 2.1870
+Epoch 40/200 | Train Loss: 2.3532 | Test Loss: 2.0804
+Epoch 41/200 | Train Loss: 2.2416 | Test Loss: 1.9764
+Epoch 42/200 | Train Loss: 2.1326 | Test Loss: 1.8755
+Epoch 43/200 | Train Loss: 2.0266 | Test Loss: 1.7779
+Epoch 44/200 | Train Loss: 1.9237 | Test Loss: 1.6838
+Epoch 45/200 | Train Loss: 1.8243 | Test Loss: 1.5936
+Epoch 46/200 | Train Loss: 1.7287 | Test Loss: 1.5074
+Epoch 47/200 | Train Loss: 1.6371 | Test Loss: 1.4255
+Epoch 48/200 | Train Loss: 1.5497 | Test Loss: 1.3481
+Epoch 49/200 | Train Loss: 1.4667 | Test Loss: 1.2752
+Epoch 50/200 | Train Loss: 1.3882 | Test Loss: 1.2068
+Epoch 51/200 | Train Loss: 1.3144 | Test Loss: 1.1432
+Epoch 52/200 | Train Loss: 1.2453 | Test Loss: 1.0842
+Epoch 53/200 | Train Loss: 1.1808 | Test Loss: 1.0297
+Epoch 54/200 | Train Loss: 1.1210 | Test Loss: 0.9798
+Epoch 55/200 | Train Loss: 1.0658 | Test Loss: 0.9341
+Epoch 56/200 | Train Loss: 1.0150 | Test Loss: 0.8925
+Epoch 57/200 | Train Loss: 0.9684 | Test Loss: 0.8547
+Epoch 58/200 | Train Loss: 0.9259 | Test Loss: 0.8205
+Epoch 59/200 | Train Loss: 0.8870 | Test Loss: 0.7894
+Epoch 60/200 | Train Loss: 0.8516 | Test Loss: 0.7613
+Epoch 61/200 | Train Loss: 0.8194 | Test Loss: 0.7357
+Epoch 62/200 | Train Loss: 0.7898 | Test Loss: 0.7122
+Epoch 63/200 | Train Loss: 0.7627 | Test Loss: 0.6906
+Epoch 64/200 | Train Loss: 0.7377 | Test Loss: 0.6705
+Epoch 65/200 | Train Loss: 0.7144 | Test Loss: 0.6516
+Epoch 66/200 | Train Loss: 0.6925 | Test Loss: 0.6336
+Epoch 67/200 | Train Loss: 0.6718 | Test Loss: 0.6162
+Epoch 68/200 | Train Loss: 0.6519 | Test Loss: 0.5993
+Epoch 69/200 | Train Loss: 0.6327 | Test Loss: 0.5826
+Epoch 70/200 | Train Loss: 0.6140 | Test Loss: 0.5661
+Epoch 71/200 | Train Loss: 0.5956 | Test Loss: 0.5496
+Epoch 72/200 | Train Loss: 0.5775 | Test Loss: 0.5331
+Epoch 73/200 | Train Loss: 0.5596 | Test Loss: 0.5167
+Epoch 74/200 | Train Loss: 0.5418 | Test Loss: 0.5002
+Epoch 75/200 | Train Loss: 0.5242 | Test Loss: 0.4839
+Epoch 76/200 | Train Loss: 0.5067 | Test Loss: 0.4677
+Epoch 77/200 | Train Loss: 0.4895 | Test Loss: 0.4517
+Epoch 78/200 | Train Loss: 0.4727 | Test Loss: 0.4360
+Epoch 79/200 | Train Loss: 0.4561 | Test Loss: 0.4208
+Epoch 80/200 | Train Loss: 0.4401 | Test Loss: 0.4060
+Epoch 81/200 | Train Loss: 0.4245 | Test Loss: 0.3917
+Epoch 82/200 | Train Loss: 0.4096 | Test Loss: 0.3781
+Epoch 83/200 | Train Loss: 0.3953 | Test Loss: 0.3651
+Epoch 84/200 | Train Loss: 0.3816 | Test Loss: 0.3529
+Epoch 85/200 | Train Loss: 0.3687 | Test Loss: 0.3414
+Epoch 86/200 | Train Loss: 0.3565 | Test Loss: 0.3305
+Epoch 87/200 | Train Loss: 0.3450 | Test Loss: 0.3204
+Epoch 88/200 | Train Loss: 0.3342 | Test Loss: 0.3108
+Epoch 89/200 | Train Loss: 0.3240 | Test Loss: 0.3019
+Epoch 90/200 | Train Loss: 0.3144 | Test Loss: 0.2934
+Epoch 91/200 | Train Loss: 0.3053 | Test Loss: 0.2855
+Epoch 92/200 | Train Loss: 0.2966 | Test Loss: 0.2779
+Epoch 93/200 | Train Loss: 0.2884 | Test Loss: 0.2708
+Epoch 94/200 | Train Loss: 0.2806 | Test Loss: 0.2640
+Epoch 95/200 | Train Loss: 0.2732 | Test Loss: 0.2576
+Epoch 96/200 | Train Loss: 0.2661 | Test Loss: 0.2514
+Epoch 97/200 | Train Loss: 0.2594 | Test Loss: 0.2456
+Epoch 98/200 | Train Loss: 0.2530 | Test Loss: 0.2401
+Epoch 99/200 | Train Loss: 0.2468 | Test Loss: 0.2348
+Epoch 100/200 | Train Loss: 0.2410 | Test Loss: 0.2298
+Epoch 101/200 | Train Loss: 0.2355 | Test Loss: 0.2250
+Epoch 102/200 | Train Loss: 0.2302 | Test Loss: 0.2204
+Epoch 103/200 | Train Loss: 0.2252 | Test Loss: 0.2160
+Epoch 104/200 | Train Loss: 0.2204 | Test Loss: 0.2119
+Epoch 105/200 | Train Loss: 0.2158 | Test Loss: 0.2080
+Epoch 106/200 | Train Loss: 0.2115 | Test Loss: 0.2042
+Epoch 107/200 | Train Loss: 0.2075 | Test Loss: 0.2006
+Epoch 108/200 | Train Loss: 0.2036 | Test Loss: 0.1972
+Epoch 109/200 | Train Loss: 0.1999 | Test Loss: 0.1940
+Epoch 110/200 | Train Loss: 0.1964 | Test Loss: 0.1910
+Epoch 111/200 | Train Loss: 0.1932 | Test Loss: 0.1880
+Epoch 112/200 | Train Loss: 0.1900 | Test Loss: 0.1853
+Epoch 113/200 | Train Loss: 0.1871 | Test Loss: 0.1827
+Epoch 114/200 | Train Loss: 0.1843 | Test Loss: 0.1802
+Epoch 115/200 | Train Loss: 0.1816 | Test Loss: 0.1778
+Epoch 116/200 | Train Loss: 0.1791 | Test Loss: 0.1756
+Epoch 117/200 | Train Loss: 0.1767 | Test Loss: 0.1734
+Epoch 118/200 | Train Loss: 0.1744 | Test Loss: 0.1714
+Epoch 119/200 | Train Loss: 0.1722 | Test Loss: 0.1694
+Epoch 120/200 | Train Loss: 0.1702 | Test Loss: 0.1676
+Epoch 121/200 | Train Loss: 0.1682 | Test Loss: 0.1658
+Epoch 122/200 | Train Loss: 0.1663 | Test Loss: 0.1641
+Epoch 123/200 | Train Loss: 0.1645 | Test Loss: 0.1625
+Epoch 124/200 | Train Loss: 0.1628 | Test Loss: 0.1610
+Epoch 125/200 | Train Loss: 0.1612 | Test Loss: 0.1595
+Epoch 126/200 | Train Loss: 0.1596 | Test Loss: 0.1581
+Epoch 127/200 | Train Loss: 0.1581 | Test Loss: 0.1568
+Epoch 128/200 | Train Loss: 0.1567 | Test Loss: 0.1555
+Epoch 129/200 | Train Loss: 0.1553 | Test Loss: 0.1542
+Epoch 130/200 | Train Loss: 0.1539 | Test Loss: 0.1530
+Epoch 131/200 | Train Loss: 0.1526 | Test Loss: 0.1519
+Epoch 132/200 | Train Loss: 0.1514 | Test Loss: 0.1507
+Epoch 133/200 | Train Loss: 0.1502 | Test Loss: 0.1496
+Epoch 134/200 | Train Loss: 0.1490 | Test Loss: 0.1486
+Epoch 135/200 | Train Loss: 0.1478 | Test Loss: 0.1475
+Epoch 136/200 | Train Loss: 0.1467 | Test Loss: 0.1465
+Epoch 137/200 | Train Loss: 0.1456 | Test Loss: 0.1455
+Epoch 138/200 | Train Loss: 0.1446 | Test Loss: 0.1445
+Epoch 139/200 | Train Loss: 0.1436 | Test Loss: 0.1436
+Epoch 140/200 | Train Loss: 0.1425 | Test Loss: 0.1427
+Epoch 141/200 | Train Loss: 0.1416 | Test Loss: 0.1418
+Epoch 142/200 | Train Loss: 0.1406 | Test Loss: 0.1409
+Epoch 143/200 | Train Loss: 0.1396 | Test Loss: 0.1401
+Epoch 144/200 | Train Loss: 0.1387 | Test Loss: 0.1392
+Epoch 145/200 | Train Loss: 0.1378 | Test Loss: 0.1384
+Epoch 146/200 | Train Loss: 0.1369 | Test Loss: 0.1375
+Epoch 147/200 | Train Loss: 0.1360 | Test Loss: 0.1367
+Epoch 148/200 | Train Loss: 0.1352 | Test Loss: 0.1359
+Epoch 149/200 | Train Loss: 0.1343 | Test Loss: 0.1352
+Epoch 150/200 | Train Loss: 0.1335 | Test Loss: 0.1344
+Epoch 151/200 | Train Loss: 0.1326 | Test Loss: 0.1336
+Epoch 152/200 | Train Loss: 0.1318 | Test Loss: 0.1329
+Epoch 153/200 | Train Loss: 0.1310 | Test Loss: 0.1321
+Epoch 154/200 | Train Loss: 0.1302 | Test Loss: 0.1314
+Epoch 155/200 | Train Loss: 0.1295 | Test Loss: 0.1307
+Epoch 156/200 | Train Loss: 0.1287 | Test Loss: 0.1300
+Epoch 157/200 | Train Loss: 0.1279 | Test Loss: 0.1293
+Epoch 158/200 | Train Loss: 0.1272 | Test Loss: 0.1286
+Epoch 159/200 | Train Loss: 0.1265 | Test Loss: 0.1279
+Epoch 160/200 | Train Loss: 0.1257 | Test Loss: 0.1272
+Epoch 161/200 | Train Loss: 0.1250 | Test Loss: 0.1265
+Epoch 162/200 | Train Loss: 0.1243 | Test Loss: 0.1258
+Epoch 163/200 | Train Loss: 0.1236 | Test Loss: 0.1252
+Epoch 164/200 | Train Loss: 0.1228 | Test Loss: 0.1245
+Epoch 165/200 | Train Loss: 0.1221 | Test Loss: 0.1238
+Epoch 166/200 | Train Loss: 0.1214 | Test Loss: 0.1232
+Epoch 167/200 | Train Loss: 0.1207 | Test Loss: 0.1225
+Epoch 168/200 | Train Loss: 0.1201 | Test Loss: 0.1219
+Epoch 169/200 | Train Loss: 0.1194 | Test Loss: 0.1212
+Epoch 170/200 | Train Loss: 0.1187 | Test Loss: 0.1206
+Epoch 171/200 | Train Loss: 0.1180 | Test Loss: 0.1200
+Epoch 172/200 | Train Loss: 0.1174 | Test Loss: 0.1193
+Epoch 173/200 | Train Loss: 0.1167 | Test Loss: 0.1187
+Epoch 174/200 | Train Loss: 0.1161 | Test Loss: 0.1181
+Epoch 175/200 | Train Loss: 0.1155 | Test Loss: 0.1175
+Epoch 176/200 | Train Loss: 0.1148 | Test Loss: 0.1169
+Epoch 177/200 | Train Loss: 0.1142 | Test Loss: 0.1163
+Epoch 178/200 | Train Loss: 0.1136 | Test Loss: 0.1156
+Epoch 179/200 | Train Loss: 0.1129 | Test Loss: 0.1150
+Epoch 180/200 | Train Loss: 0.1123 | Test Loss: 0.1144
+Epoch 181/200 | Train Loss: 0.1117 | Test Loss: 0.1138
+Epoch 182/200 | Train Loss: 0.1111 | Test Loss: 0.1132
+Epoch 183/200 | Train Loss: 0.1105 | Test Loss: 0.1126
+Epoch 184/200 | Train Loss: 0.1099 | Test Loss: 0.1121
+Epoch 185/200 | Train Loss: 0.1093 | Test Loss: 0.1115
+Epoch 186/200 | Train Loss: 0.1087 | Test Loss: 0.1109
+Epoch 187/200 | Train Loss: 0.1081 | Test Loss: 0.1103
+Epoch 188/200 | Train Loss: 0.1075 | Test Loss: 0.1097
+Epoch 189/200 | Train Loss: 0.1069 | Test Loss: 0.1091
+Epoch 190/200 | Train Loss: 0.1063 | Test Loss: 0.1085
+Epoch 191/200 | Train Loss: 0.1057 | Test Loss: 0.1080
+Epoch 192/200 | Train Loss: 0.1051 | Test Loss: 0.1074
+Epoch 193/200 | Train Loss: 0.1046 | Test Loss: 0.1068
+Epoch 194/200 | Train Loss: 0.1040 | Test Loss: 0.1063
+Epoch 195/200 | Train Loss: 0.1034 | Test Loss: 0.1057
+Epoch 196/200 | Train Loss: 0.1028 | Test Loss: 0.1052
+Epoch 197/200 | Train Loss: 0.1023 | Test Loss: 0.1046
+Epoch 198/200 | Train Loss: 0.1017 | Test Loss: 0.1041
+Epoch 199/200 | Train Loss: 0.1012 | Test Loss: 0.1035
+Epoch 200/200 | Train Loss: 0.1006 | Test Loss: 0.1030
+['credit_score', 'dti_ratio', 'annual_income', 'loan_amount', 'employment_duration', 'past_defaults', 'credit_inquiries', 'loan_term', 'loan_purpose', 'risk_score']
+Applicant 1: Probability of Loan Approval = 0.59 | Predicted Class = 1
+Applicant 2: Probability of Loan Approval = 0.97 | Predicted Class = 1
+Applicant 3: Probability of Loan Approval = 0.58 | Predicted Class = 1
+Applicant 4: Probability of Loan Approval = 0.99 | Predicted Class = 1
+Applicant 5: Probability of Loan Approval = 0.65 | Predicted Class = 1
+Applicant 6: Probability of Loan Approval = 0.73 | Predicted Class = 1
+Applicant 7: Probability of Loan Approval = 0.67 | Predicted Class = 1
+Applicant 8: Probability of Loan Approval = 1.00 | Predicted Class = 1
+Applicant 9: Probability of Loan Approval = 0.70 | Predicted Class = 1
+Applicant 10: Probability of Loan Approval = 0.99 | Predicted Class = 1
+Applicant 11: Probability of Loan Approval = 0.72 | Predicted Class = 1
+Applicant 12: Probability of Loan Approval = 0.61 | Predicted Class = 1
+Applicant 13: Probability of Loan Approval = 1.00 | Predicted Class = 1
+Applicant 14: Probability of Loan Approval = 0.74 | Predicted Class = 1
+Applicant 15: Probability of Loan Approval = 0.85 | Predicted Class = 1
+Applicant 16: Probability of Loan Approval = 0.70 | Predicted Class = 1
+Applicant 17: Probability of Loan Approval = 1.00 | Predicted Class = 1
+Applicant 18: Probability of Loan Approval = 0.63 | Predicted Class = 1
+Applicant 19: Probability of Loan Approval = 0.94 | Predicted Class = 1
+Applicant 20: Probability of Loan Approval = 0.68 | Predicted Class = 1
+
+Process finished with exit code 0
