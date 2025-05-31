@@ -105,7 +105,7 @@ def generate_row():
     - past_defaults (If the person has defaulted before, this adds 2 to their risk)
     - credit_inquiries (Many inquiries = desperate borrower = potential risk)
     
-    if loan_purpose == "Non-productive and/or Less Secure", we increase risk score by 1.
+    if loan_purpose == 0 O (indicating a non-productive asset purchase), we increase risk score by 1.
     And if the loan term is longer than 48 years, we multiply that number by 0.5 and add
     it to the risk score.
     """
@@ -117,7 +117,7 @@ def generate_row():
         past_defaults * 2 +
         credit_inquiries * 0.2 +
         (employment_duration < 1) * 1 +
-        (loan_purpose == "Non-productive and/or Less Secure") * 1 +
+        (loan_purpose == 0) * 1 +
         (loan_term > 48) * 0.5
     )
 
