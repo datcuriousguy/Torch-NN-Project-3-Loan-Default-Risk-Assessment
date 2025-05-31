@@ -425,6 +425,11 @@ test_data = [
 
 test_data_df = pd.DataFrame(test_data)
 
+# encoders for categorical data
+
+print(df.columns.tolist())
+
+
 scaler = StandardScaler()
 test_data_scaled = scaler.fit_transform(test_data_df)
 
@@ -436,3 +441,17 @@ model = RiskModel(input_dim)
 model.load_state_dict(torch.load("risk_model.pth"))
 #set the model into evaluation ("use what you've learnt") mode.
 model.eval()
+
+"""
+finally we convert the scaled applicant data to torch's preferred torch tensor format,
+which uses float32 with two extra zeros for the model. for reference, lets print the:
+
+- test_tensor
+- test_data_scaled
+
+to see the difference.
+
+"""
+# print('Test_data_scaled:\n\n', test_data_scaled)
+# test_tensor = torch.tensor(test_data_scaled, dtype=torch.float32)
+# print('test_tensor:\n\n',test_tensor)
