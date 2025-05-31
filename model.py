@@ -442,6 +442,6 @@ which uses float32 with two extra zeros for the model. for reference, lets print
 to see the difference.
 
 """
-# print('Test_data_scaled:\n\n', test_data_scaled)
-# test_tensor = torch.tensor(test_data_scaled, dtype=torch.float32)
-# print('test_tensor:\n\n',test_tensor)
+print('Test_data_scaled:\n\n', test_data_scaled)
+test_tensor = torch.tensor(test_data_scaled, dtype=torch.float32)
+print('test_tensor:\n\n',test_tensor)
