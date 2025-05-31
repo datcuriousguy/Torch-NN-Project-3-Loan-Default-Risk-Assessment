@@ -448,3 +448,8 @@ test_tensor = torch.tensor(test_data_scaled, dtype=torch.float32)
 
 with torch.no_grad():
     predictions = model(test_tensor)
+
+# using sigmoid output for binary classification, convert to probabilities
+# and binary predictions (0 or 1)
+predicted_probs = torch.sigmoid(predictions).numpy()   # to convert the output of the model to a value between 0 and 1 using sigmoid activation function
+predicted_classes = (predicted_probs > 0.5).astype(int)
