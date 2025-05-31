@@ -83,7 +83,7 @@ def generate_row():
     The probabilities [0.1, 0.2, 0.3, 0.2, 0.15, 0.05] are such that longer loans are rarer.
 
     9. LOAN PURPOSE
-    random choice between 1 and 0. 
+    random choice between 1 and 0.
     1 indicates productive asset purchase / use case (say, education)
     0 indicates non-productive asset / use case (say, buying a TV)
     """
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS loan_training_data (
     past_defaults TINYINT,
     credit_inquiries INT,
     loan_term INT,
-    loan_purpose VARCHAR(50),
+    loan_purpose INT,
     risk_score FLOAT
 );
 """
