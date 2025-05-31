@@ -29,16 +29,8 @@ categorical_cols = ['employment_status', 'loan_purpose']
 label_encoders = {}
 
 """
-For each categorical column, we create a label-encoder that takes
-the textual category name and converts it into integers, saving it
-incase its needed later. Without this we wouldn't be able to train
-the model on data like loan_purpose.
+Removed categorical encoders as they are no longer needed on making previously categorical vals binary.
 """
-
-for col in categorical_cols:
-    le = LabelEncoder()
-    df[col] = le.fit_transform(df[col])
-    label_encoders[col] = le  # Save encoder for possible use later
 
 """
 Here we split the input features vs thde target variable.
@@ -201,223 +193,243 @@ TEST ON NEW DATA:
 test_data = [
     {
         "credit_score": 720,
-        "debt_to_income": 0.25,
-        "average_salary": 85000,
-        "loan_amount": 21250,  # salary * dti
+        "dti_ratio": 0.25,
+        "annual_income": 85000,
+        "loan_amount": 21250,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 2,
         "loan_term": 36,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 610,
-        "debt_to_income": 0.45,
-        "average_salary": 42000,
+        "dti_ratio": 0.45,
+        "annual_income": 42000,
         "loan_amount": 18900,
         "employment_status": "Recently Hired",
         "past_defaults": 1,
         "credit_inquiries": 3,
         "loan_term": 48,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 680,
-        "debt_to_income": 0.3,
-        "average_salary": 60000,
+        "dti_ratio": 0.3,
+        "annual_income": 60000,
         "loan_amount": 18000,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 1,
         "loan_term": 24,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 590,
-        "debt_to_income": 0.5,
-        "average_salary": 35000,
+        "dti_ratio": 0.5,
+        "annual_income": 35000,
         "loan_amount": 17500,
         "employment_status": "Unstable Job",
         "past_defaults": 2,
         "credit_inquiries": 4,
         "loan_term": 60,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 755,
-        "debt_to_income": 0.2,
-        "average_salary": 120000,
+        "dti_ratio": 0.2,
+        "annual_income": 120000,
         "loan_amount": 24000,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 1,
         "loan_term": 36,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 645,
-        "debt_to_income": 0.35,
-        "average_salary": 56000,
+        "dti_ratio": 0.35,
+        "annual_income": 56000,
         "loan_amount": 19600,
         "employment_status": "Student",
         "past_defaults": 0,
         "credit_inquiries": 2,
         "loan_term": 24,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 700,
-        "debt_to_income": 0.3,
-        "average_salary": 90000,
+        "dti_ratio": 0.3,
+        "annual_income": 90000,
         "loan_amount": 27000,
         "employment_status": "Recently Hired",
         "past_defaults": 0,
         "credit_inquiries": 3,
         "loan_term": 36,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 550,
-        "debt_to_income": 0.6,
-        "average_salary": 30000,
+        "dti_ratio": 0.6,
+        "annual_income": 30000,
         "loan_amount": 18000,
         "employment_status": "Unemployed",
         "past_defaults": 3,
         "credit_inquiries": 5,
         "loan_term": 72,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 705,
-        "debt_to_income": 0.4,
-        "average_salary": 65000,
+        "dti_ratio": 0.4,
+        "annual_income": 65000,
         "loan_amount": 26000,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 0,
         "loan_term": 24,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 600,
-        "debt_to_income": 0.5,
-        "average_salary": 40000,
+        "dti_ratio": 0.5,
+        "annual_income": 40000,
         "loan_amount": 20000,
         "employment_status": "Unstable Job",
         "past_defaults": 2,
         "credit_inquiries": 4,
         "loan_term": 60,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 670,
-        "debt_to_income": 0.2,
-        "average_salary": 50000,
+        "dti_ratio": 0.2,
+        "annual_income": 50000,
         "loan_amount": 10000,
         "employment_status": "Student",
         "past_defaults": 0,
         "credit_inquiries": 1,
         "loan_term": 12,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 740,
-        "debt_to_income": 0.15,
-        "average_salary": 110000,
+        "dti_ratio": 0.15,
+        "annual_income": 110000,
         "loan_amount": 16500,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 1,
         "loan_term": 24,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 520,
-        "debt_to_income": 0.7,
-        "average_salary": 25000,
+        "dti_ratio": 0.7,
+        "annual_income": 25000,
         "loan_amount": 17500,
         "employment_status": "Unemployed",
         "past_defaults": 4,
         "credit_inquiries": 6,
         "loan_term": 72,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 690,
-        "debt_to_income": 0.4,
-        "average_salary": 72000,
+        "dti_ratio": 0.4,
+        "annual_income": 72000,
         "loan_amount": 28800,
         "employment_status": "Recently Hired",
         "past_defaults": 1,
         "credit_inquiries": 2,
         "loan_term": 36,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 630,
-        "debt_to_income": 0.3,
-        "average_salary": 47000,
+        "dti_ratio": 0.3,
+        "annual_income": 47000,
         "loan_amount": 14100,
         "employment_status": "Student",
         "past_defaults": 1,
         "credit_inquiries": 3,
         "loan_term": 12,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 780,
-        "debt_to_income": 0.2,
-        "average_salary": 135000,
+        "dti_ratio": 0.2,
+        "annual_income": 135000,
         "loan_amount": 27000,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 1,
         "loan_term": 36,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 585,
-        "debt_to_income": 0.55,
-        "average_salary": 39000,
+        "dti_ratio": 0.55,
+        "annual_income": 39000,
         "loan_amount": 21450,
         "employment_status": "Unstable Job",
         "past_defaults": 2,
         "credit_inquiries": 5,
         "loan_term": 60,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 710,
-        "debt_to_income": 0.25,
-        "average_salary": 95000,
+        "dti_ratio": 0.25,
+        "annual_income": 95000,
         "loan_amount": 23750,
         "employment_status": "Stable Job",
         "past_defaults": 0,
         "credit_inquiries": 2,
         "loan_term": 24,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     },
     {
         "credit_score": 640,
-        "debt_to_income": 0.4,
-        "average_salary": 58000,
+        "dti_ratio": 0.4,
+        "annual_income": 58000,
         "loan_amount": 23200,
         "employment_status": "Recently Hired",
         "past_defaults": 1,
         "credit_inquiries": 3,
         "loan_term": 48,
-        "loan_purpose": "Insecure"
+        "loan_purpose": "Insecure",
+        "risk_score": None
     },
     {
         "credit_score": 690,
-        "debt_to_income": 0.3,
-        "average_salary": 67000,
+        "dti_ratio": 0.3,
+        "annual_income": 67000,
         "loan_amount": 20100,
         "employment_status": "Student",
         "past_defaults": 0,
         "credit_inquiries": 2,
         "loan_term": 24,
-        "loan_purpose": "Secure"
+        "loan_purpose": "Secure",
+        "risk_score": None
     }
 ]
 
