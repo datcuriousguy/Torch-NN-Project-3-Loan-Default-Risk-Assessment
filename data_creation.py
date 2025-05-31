@@ -24,7 +24,7 @@ connection = pymysql.connect(
 np.random.seed(42)
 
 # Employment status categories
-employment_duration = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+employment_durations = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 employment_weights = [0.45, 0.2, 0.1, 0.15, 0.1]  # trying to use realistic ratios. Large proportion of recent hires and stable jobs
 
 # Loan purpose categories
@@ -38,7 +38,7 @@ columns = [
     "dti_ratio",
     "annual_income",
     "loan_amount",
-    "employment_status",
+    "employment_duration",
     "past_defaults",
     "credit_inquiries_12m",
     "loan_term",
@@ -91,7 +91,7 @@ def generate_row():
     dti_ratio = round(np.clip(np.random.normal(0.35, 0.1), 0.1, 0.9), 2)
     annual_income = int(np.clip(np.random.normal(60000, 20000), 10000, 200000))
     loan_amount = int(np.clip(np.random.normal(annual_income * dti_ratio, 5000), 1000, 75000))
-    employment_status = random.choices(employment_duration, weights=employment_weights, k=1)[0]
+    employment_duration = random.choice(employment_durations)
     past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
     credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
     loan_term = int(np.random.choice([12, 24, 36, 48, 60, 72], p=[0.1, 0.2, 0.3, 0.2, 0.15, 0.05]))
@@ -116,7 +116,7 @@ def generate_row():
         dti_ratio * 1.5 +
         past_defaults * 2 +
         credit_inquiries * 0.2 +
-        (employment_status != "Stable Job") * 1 +
+        (employment_duration < 1) * 1 +
         (loan_purpose == "Non-productive and/or Less Secure") * 1 +
         (loan_term > 48) * 0.5
     )
@@ -130,7 +130,7 @@ def generate_row():
         dti_ratio,
         annual_income,
         loan_amount,
-        employment_status,
+        employment_duration,
         past_defaults,
         credit_inquiries,
         loan_term,
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS loan_training_data (
     dti_ratio FLOAT,
     annual_income INT,
     loan_amount INT,
-    employment_status VARCHAR(50),
+    employment_duration VARCHAR(50),
     past_defaults TINYINT,
     credit_inquiries INT,
     loan_term INT,
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS loan_training_data (
 """
 
 # Column headers
-print("credit_score | dti_ratio | annual_income | loan_amount | employment_status     | past_defaults | credit_inquiries | loan_term | loan_purpose                    | risk_score")
+print("credit_score | dti_ratio | annual_income | loan_amount | employment_duration     | past_defaults | credit_inquiries | loan_term | loan_purpose                    | risk_score")
 print("-" * 130)
 
 # Insert generated rows into MySQL
@@ -172,7 +172,7 @@ try:
             insert_query = """
             INSERT INTO loan_training_data (
                 credit_score, dti_ratio, annual_income, loan_amount,
-                employment_status, past_defaults, credit_inquiries,
+                employment_duration, past_defaults, credit_inquiries,
                 loan_term, loan_purpose, risk_score
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
