@@ -65,10 +65,9 @@ def generate_row():
     4. LOAN AMOUNT (WHAT IS BEING BORROWED)
     for the loan amount, annual_income * dti_ratio estimates how much the person can afford to borrow.
 
-    5. EMPLOYMENT STATUS
-    for the employment status, we have a list ["Stable Job", "Unstable Job", "Unemployed", "Recently Hired", "Student"].
-    out of these items, we pick any one at random but with some bias in the weights, namely a bias towards
-    student and stable job, to try to match the constantly changing reality of the job market.
+    5. EMPLOYMENT DURATION (PREVIOUSLY EMPLOYMENT STATUS)
+    Changed from 'student, newly employed, etc.' to '0,1,2,3,4' int duration of work. A duration of 0 indicates
+    a new employee and a duration of 10 would indicate high job stability.
 
     6. NUMBER OF PAST DEFAULTS
     Past-default number indicates whether and if so, how many times the borrower has defaulted (or failed to pay back a loan) in
