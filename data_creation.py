@@ -82,7 +82,7 @@ def generate_row():
     A set number of months between 12 and 72 mos (or 1 to 6 years).
     The probabilities [0.1, 0.2, 0.3, 0.2, 0.15, 0.05] are such that longer loans are rarer.
 
-    9. LOAN PURPOSE
+    9. LOAN PURPOSE (previously string, now binary int for simplicity.)
     random choice between 1 and 0.
     1 indicates productive asset purchase / use case (say, education)
     0 indicates non-productive asset / use case (say, buying a TV)
