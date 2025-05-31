@@ -24,7 +24,7 @@ connection = pymysql.connect(
 np.random.seed(42)
 
 # Employment status categories
-employment_statuses = ["Stable Job", "Unstable Job", "Unemployed", "Recently Hired", "Student"]
+employment_duration = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 employment_weights = [0.45, 0.2, 0.1, 0.15, 0.1]  # trying to use realistic ratios. Large proportion of recent hires and stable jobs
 
 # Loan purpose categories
@@ -92,7 +92,7 @@ def generate_row():
     dti_ratio = round(np.clip(np.random.normal(0.35, 0.1), 0.1, 0.9), 2)
     annual_income = int(np.clip(np.random.normal(60000, 20000), 10000, 200000))
     loan_amount = int(np.clip(np.random.normal(annual_income * dti_ratio, 5000), 1000, 75000))
-    employment_status = random.choices(employment_statuses, weights=employment_weights, k=1)[0]
+    employment_status = random.choices(employment_duration, weights=employment_weights, k=1)[0]
     past_defaults = np.random.choice([0, 1], p=[0.85, 0.15]) if credit_score > 650 else np.random.choice([0, 1], p=[0.6, 0.4])
     credit_inquiries = int(np.clip(np.random.poisson(2), 0, 10))
     loan_term = int(np.random.choice([12, 24, 36, 48, 60, 72], p=[0.1, 0.2, 0.3, 0.2, 0.15, 0.05]))
@@ -168,7 +168,7 @@ try:
             row = generate_row()
 
             # Print row in tabular format
-            print(f"{row[0]:<13} | {row[1]:<9} | {row[2]:<13} | {row[3]:<11} | {row[4]:<21} | {row[5]:<13} | {row[6]:<17} | {row[7]:<9} | {row[8]:<30} | {row[9]:<10}")
+            print(f"{row[0]:<10} | {row[1]:<7} | {row[2]:<10} | {row[3]:<9} | {row[4]:<15} | {row[5]:<10} | {row[6]:<12} | {row[7]:<7} | {row[8]:<20} | {row[9]:<8}")
 
             insert_query = """
             INSERT INTO loan_training_data (
