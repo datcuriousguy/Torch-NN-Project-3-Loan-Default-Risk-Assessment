@@ -3,6 +3,8 @@
 Code to generate training data for training the model to identify low risk loan applicants
 """
 
+# Note: On the categorical-to-binary simplification, I updated the database with the new data
+
 import pandas as pd
 import numpy as np
 import random
