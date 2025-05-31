@@ -83,8 +83,9 @@ def generate_row():
     The probabilities [0.1, 0.2, 0.3, 0.2, 0.15, 0.05] are such that longer loans are rarer.
 
     9. LOAN PURPOSE
-    60% Chance of productive / secure loan use (say, a car or basic two-wheeler)
-    40% Chance of non-productive / insecure loan use (say, a TV)
+    random choice between 1 and 0. 
+    1 indicates productive asset purchase / use case (say, education)
+    0 indicates non-productive asset / use case (say, buying a TV)
     """
 
     credit_score = int(np.clip(np.random.normal(680, 50), 300, 850))
