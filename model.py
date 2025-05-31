@@ -24,9 +24,7 @@ connection.close()
 # We don't need the ID column for testing or training.
 df = df.drop(columns=['id'])
 
-# Encode categorical features that aren't numeric
-categorical_cols = ['employment_status', 'loan_purpose']
-label_encoders = {}
+# removed label encoders due to the categorical-to-binary simplification
 
 """
 Removed categorical encoders as they are no longer needed on making previously categorical vals binary.
